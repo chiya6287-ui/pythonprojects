@@ -116,4 +116,4 @@ Individuals_meetup : {user_data1}
 Individuals_relation_time : {user_data2}
 Individuals_thinking : {user_data3}""")
 print("\nData has been saved in 'user_data.json'")
-webbrowser.open("https://www.istagrma.com/videos?q=S+p+a+c+e+X")
+webbrowser.open("https://www.instagram.com")
