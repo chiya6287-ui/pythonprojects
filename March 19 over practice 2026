@@ -1,0 +1,75 @@
+import json
+import time
+import sys
+from datetime import datetime
+
+class Greeting:
+    def __init__(self, greet, receive):
+        self.greet = greet
+        self.receive = receive
+    def show_greeting(self):
+        print(f"\n{self.greet} & {self.receive}")
+class Creativity:
+    def daily_routine(self):
+        attempts = 0
+        while True:
+            try:
+                routine = input("\nEnter daily routine (breakfast, lunch, dinner) \n")
+                if routine.isdigit():
+                    raise ValueError("\ndigits are not allowed")
+                elif routine in ["breakfast", "lunch", "dinner"]:
+                    return {"Routine": routine}
+                else:
+                    print("\nroutine not match or found")
+                    attempts += 1
+            except ValueError as e:
+                print(e)
+                print("keep trying")
+                attempts += 1
+            if attempts >= 2:
+                for i in range(10, 0, -1):
+                    sys.stdout.write(f"\rWait {i} s")
+                    sys.stdout.flush()
+                    time.sleep(1)
+                attempts = 0
+    def mood(self):
+        attempts = 0
+        while True:
+            try:
+                routine = input("\nEnter routine (breakfast, lunch, dinner) \n")
+                if routine.isdigit():
+                    raise ValueError("\ndigits are not allowed")
+                elif routine in ["breakfast", "lunch", "dinner"]:
+                    return {routine: "Given routine is boring try something new"}
+                else:
+                    print("\nroutine not match or found")
+                    attempts += 1
+            except ValueError as e:
+                print(e)
+                print("keep trying")
+                attempts += 1
+            if attempts >= 2:
+                for i in range(10, 0, -1):
+                    sys.stdout.write(f"\rWait {i} s")
+                    sys.stdout.flush()
+                    time.sleep(1)
+                attempts = 0
+print("\n", datetime.now())
+greet = Greeting("Hello", "Welcome")
+greet.show_greeting()
+creativity = Creativity()
+user_data1 = creativity.daily_routine()
+print(f"\nroutine : {user_data1}")
+user_data2 = creativity.mood()
+print(f"\nmood : {user_data2}")
+
+user_data = {"routine": user_data1,
+"mood": user_data2}
+
+with open("user_data.json", "w") as file:
+    json.dump(user_data, file, indent=4)
+
+print(f"""\nProfile Summary\n
+Daily Routine : {user_data1}
+Creativity message : {user_data2}""")
+print("\nData has been saved in 'user_data.json'")
