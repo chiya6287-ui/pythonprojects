@@ -12,7 +12,7 @@ boys. In the last the program returns the whole summary for their
 meetup, relation time and psyche as well.
 
 ## My Learning Journey
-This is my learning journey and what i learn, I implementing my 
+This is my learning journey and what i learn, I am implementing my 
 learning on writing creative programs.
 
 ## Feedback
