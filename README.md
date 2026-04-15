@@ -13,7 +13,7 @@ meetup, relation time and psyche as well.
 
 ## My Learning Journey
 This is my learning journey and what i learn, I am implementing my 
-learning on writing creative programs.
+learning on writing creative programs. And still learning the relevant tools
 
 ## Feedback
 Please give your feedback — it will help me to understand how i have 
